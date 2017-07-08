@@ -1,0 +1,10 @@
+body {
+  padding-top: 5rem;
+}
+.error-404, .hello-gatsby {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+.bg-gatsby {
+  background: rebeccapurple;
+}
