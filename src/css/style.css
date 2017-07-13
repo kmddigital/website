@@ -8,3 +8,7 @@ body {
 .bg-gatsby {
   background: rebeccapurple;
 }
+div.spinner[role=spinner] {
+  top: 20px !important;
+  left: 82px;
+}

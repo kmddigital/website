@@ -1,6 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`
+    title: `Hello Gatsby`,
+    siteUrl: `https://www.example.com`
   },
-  plugins: [`gatsby-plugin-react-helmet`, `gatsby-plugin-nprogress`]
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+      // Setting a color is optional.
+        color: `white`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`
+    }
+  ]
 };

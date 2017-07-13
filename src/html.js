@@ -2,12 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
+import './js/vendor/jquery-3.1.1.slim.min.js';
+import './js/vendor/tether.min.js';
+import './js/vendor/bootstrap.min.js';
+
 export default class HTML extends React.Component {
 
   render () {
     const head = Helmet.rewind();
 
-    let jquery = (
+    /* let jquery = (
       <script
         src='https://code.jquery.com/jquery-3.1.1.slim.min.js'
         integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n'
@@ -29,7 +33,7 @@ export default class HTML extends React.Component {
         integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn'
         crossOrigin='anonymous'
       />
-    );
+    ); */
 
     let css;
     if (process.env.NODE_ENV === 'production') {
@@ -60,9 +64,9 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          { jquery }
-          { tether }
-          { bootstrap }
+          { /* jquery */ }
+          { /* tether */ }
+          { /* bootstrap */ }
         </body>
       </html>
     );
