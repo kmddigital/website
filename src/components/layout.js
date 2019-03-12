@@ -1,44 +1,55 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
-import Helmet from 'react-helmet';
+/**
+ * Layout component that queries for data
+ * with Gatsby's StaticQuery component
+ *
+ * See: https://www.gatsbyjs.org/docs/static-query/
+ */
 
+import React from "react"
+import PropTypes from "prop-types"
+import { StaticQuery, graphql, Link } from "gatsby"
+import { Location } from '@reach/router';
+
+import "../css/style.css"
 import '../css/vendor/bootstrap.min.css';
-import '../css/style.css';
 
-export default class Template extends React.Component {
-  render () {
-    return (
+const Layout = ({ children }) => (
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+    render={data => (
       <div>
-        <Helmet
-          title='Hello Gatsby'
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' }
-          ]}
-          />
-        <nav className='navbar navbar-toggleable-md navbar-inverse bg-gatsby fixed-top'>
+        <nav className='navbar navbar-expand-lg navbar-dark bg-gatsby fixed-top'>
           <button className='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation'>
             <span className='navbar-toggler-icon' />
           </button>
           <Link to='/' className='navbar-brand'>Gatsby</Link>
 
-          <div className='collapse navbar-collapse' id='navbarsExampleDefault'>
+          <div className='collapse navbar-collapse'>
             <ul className='navbar-nav sidebar-nav ml-auto'>
-              <NavItem location={this.props.location.pathname} link='/' name='Home' />
-              <NavItem location={this.props.location.pathname} link='/about/' name='About' />
+            <Location>
+              {({ navigate, location }) =>     
+                <>        
+                  <NavItem location={location.pathname} link='/' name='Home' />
+                  <NavItem location={location.pathname} link='/about/' name='About' />
+                </>  
+              }
+            </Location>
             </ul>
           </div>
         </nav>
-        {this.props.children()}
+        {children}
       </div>
-    );
-  }
-}
-
-Template.propTypes = {
-  children: PropTypes.func
-};
+    )}
+  />
+)
 
 class NavItem extends React.Component {
   isActive () {
@@ -69,3 +80,9 @@ class NavItem extends React.Component {
     );
   }
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export default Layout

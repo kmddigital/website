@@ -1,78 +1,41 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import React from "react"
+import PropTypes from "prop-types"
 
-import './js/vendor/jquery-3.1.1.slim.min.js';
-import './js/vendor/tether.min.js';
-import './js/vendor/bootstrap.min.js';
-
-export default class HTML extends React.Component {
-
-  render () {
-    const head = Helmet.rewind();
-
-    /* let jquery = (
-      <script
-        src='https://code.jquery.com/jquery-3.1.1.slim.min.js'
-        integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n'
-        crossOrigin='anonymous'
-      />
-    );
-
-    let tether = (
-      <script
-        src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js'
-        integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb'
-        crossOrigin='anonymous'
-      />
-    );
-
-    let bootstrap = (
-      <script
-        src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'
-        integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn'
-        crossOrigin='anonymous'
-      />
-    ); */
-
-    let css;
-    if (process.env.NODE_ENV === 'production') {
-      css = (
-        <style
-          dangerouslySetInnerHTML={{
-            __html: require('!raw!../public/styles.css')
-          }}
+export default function HTML(props) {
+  return (
+    <html {...props.htmlAttributes}>
+      <head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-      );
-    }
-
-    return (
-      <html lang='en'>
-        <head>
-          <meta
-            charSet='utf-8'
-          />
-          <meta
-            name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'
-          />
-          {this.props.headComponents}
-          {css}
-        </head>
-        <body>
-          <div
-            id='___gatsby'
-            dangerouslySetInnerHTML={{ __html: this.props.body }}
-          />
-          {this.props.postBodyComponents}
-          { /* jquery */ }
-          { /* tether */ }
-          { /* bootstrap */ }
-        </body>
-      </html>
-    );
-  }
+        {props.headComponents}
+      </head>
+      <body {...props.bodyAttributes}>
+        {props.preBodyComponents}
+        <noscript key="noscript" id="gatsby-noscript">
+          This app works best with JavaScript enabled.
+        </noscript>
+        <div
+          key={`body`}
+          id="___gatsby"
+          dangerouslySetInnerHTML={{ __html: props.body }}
+        />
+        {props.postBodyComponents}
+        <script src="/js/vendor/jquery-3.3.1.min.js"></script>
+        <script src="/js/vendor/bootstrap.bundle.min.js"></script>
+      </body>
+    </html>
+  )
 }
 
 HTML.propTypes = {
-  body: PropTypes.string
-};
+  htmlAttributes: PropTypes.object,
+  headComponents: PropTypes.array,
+  bodyAttributes: PropTypes.object,
+  preBodyComponents: PropTypes.array,
+  body: PropTypes.string,
+  postBodyComponents: PropTypes.array,
+}

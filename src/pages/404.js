@@ -1,17 +1,21 @@
-import React from 'react';
-import Link from 'gatsby-link';
+import React from "react"
+import { Link } from "gatsby"
 
-export default class Index extends React.Component {
-  render () {
-    return (
-      <div className='container'>
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
-        <div className='error-404'>
-          <h1>404 - Page Not Found</h1>
-          <p className='lead'>We couldn't find the page you were looking for.<br /> Why don't you try <Link to='/'>going home</Link>?</p>
-        </div>
+const NotFoundPage = () => (
+  <Layout>
+    <SEO title="404: Not found" />
+    <div className='container'>
 
+      <div className='error-404'>
+        <h1>404 - Page Not Found</h1>
+        <p className='lead'>We couldn't find the page you were looking for.<br /> Why don't you try <Link to='/'>going home</Link>?</p>
       </div>
-    );
-  }
-}
+
+    </div>
+  </Layout>
+)
+
+export default NotFoundPage
