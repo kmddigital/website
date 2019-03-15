@@ -2,7 +2,7 @@
   "name": "kmddigital-website",
   "private": true,
   "description": "The website for KMD Digital",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Keith C-R <keith@kmddigital.com>",
   "dependencies": {
     "gatsby": "^2.1.29",

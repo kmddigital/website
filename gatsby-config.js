@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `KMD Digital`,
+    description: `KMD Digital develops better to deliver meaningful products.`,
     author: `@gatsbyjs`,
   },
   plugins: [
@@ -18,13 +18,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `KMD Digital`,
+        short_name: `KMD Digital`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#42ACFE`,
+        theme_color: `#42ACFE`,
         display: `minimal-ui`,
-        icon: `src/img/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/img/kmdlogo.png`, // This path is relative to the root of the site.
+        include_favicon: true,
       },
     },
     'gatsby-plugin-offline',

@@ -30,7 +30,7 @@ class IndexPage extends Component {
       opacity = 100;
     return (
       <>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO title="Home" keywords={[`develop`, `application`, `progamming`, `kmd`, `digital`]} />
         <nav className="navbar navbar-expand-lg navbar-dark navbar-absolute">
           <div className="container">
             <a className="navbar-brand" href="/">KMD Digital</a>
