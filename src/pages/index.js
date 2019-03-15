@@ -6,6 +6,10 @@ import openSource from '../img/open_source.svg';
 import connected from '../img/connected.svg';
 import story from '../img/story.svg';
 
+import '../css/style.css';
+import '../css/vendor/bootstrap.min.css';
+import '../css/vendor/font-awesome.css';
+
 class IndexPage extends Component {
 
   constructor(props) {
