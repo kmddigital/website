@@ -10,8 +10,9 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql, Link } from "gatsby"
 import { Location } from '@reach/router';
 
-import "../css/style.css"
+import '../css/style.css';
 import '../css/vendor/bootstrap.min.css';
+import '../css/vendor/font-awesome.css';
 
 const Layout = ({ children }) => (
   <StaticQuery
