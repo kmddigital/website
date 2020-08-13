@@ -140,8 +140,14 @@ div.spinner[role=spinner] {
 }
 
 @media (max-width: 978px) {
+    .masthead h1 { 
+        font-size: 4rem;
+    }
     .container.about {
       padding: 0;
+    }
+    .col-sm-6 img {
+        margin: 30px 0 30px 0;
     }
 }
 

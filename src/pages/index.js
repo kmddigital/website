@@ -80,7 +80,7 @@ class IndexPage extends Component {
             </div>
           </div>
         </div>
-        <div style={{marginTop: '-1px', padding: '1rem'}} className="diagonal container-fluid bg-white">
+        <div style={{marginTop: '-1px', padding: '1.2rem'}} className="diagonal container-fluid bg-white">
           <div className="container">
           </div>
         </div>
@@ -98,6 +98,9 @@ class IndexPage extends Component {
           </div>
         </div>
         <div className="row nm">
+          <div className="col-sm-6 bg-open-source md-5 d-block d-sm-none">
+            <img src={openSource} style={{width: '35rem'}} className="img-fluid mx-auto d-block" alt="Open Source"></img>
+          </div>
           <div className="col-sm-6 md-5">
             <div className="container about d-flex h-300">
               <div className="row justify-content-center align-self-center">
@@ -107,12 +110,12 @@ class IndexPage extends Component {
             </div>
           </div>
           <div className="col-sm-6 bg-open-source md-5">
-            <img src={openSource} style={{width: '35rem'}} className="img-fluid mx-auto d-block" alt="Open Source"></img>
+            <img src={openSource} style={{width: '35rem'}} className="img-fluid mx-auto d-none d-sm-block" alt="Open Source"></img>
           </div>
         </div>
         <div className="row nm">
           <div className="col-sm-6 bg-connected md-5">
-            <img src={connected} style={{width: '35rem'}} className="img-fluid mx-auto d-block" alt="Open Source"></img>
+            <img src={connected} style={{width: '35rem'}} className="img-fluid mx-auto d-block" alt="Connected"></img>
           </div>
           <div className="col-sm-6">
             <div className="container about d-flex h-300">
