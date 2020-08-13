@@ -127,7 +127,7 @@ class IndexPage extends Component {
           <div className="container">
           <div className="row">
             <div className="col-sm-6 d-flex">
-              <p className="text-light mb-0 justify-content-center align-self-center">Copyright &copy; 2019 KMD Digital LLC</p>
+              <p className="text-light mb-0 justify-content-center align-self-center">Copyright &copy; {new Date().getFullYear()} KMD Digital LLC</p>
             </div>
             <div className="col-sm-6 text-right">
               <a href="https://github.com/kmddigital" target="_blank" rel="noopener noreferrer"><i className="text-light fab fa-2x fa-github"></i></a>

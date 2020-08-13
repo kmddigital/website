@@ -24,10 +24,6 @@ div.spinner[role=spinner] {
     background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
 }
 
-.navbar.navbar-absolute {
-    position: absolute;
-}
-
 .masthead h1 {
     font-size: 5rem;
 }
@@ -38,6 +34,10 @@ div.spinner[role=spinner] {
 
 .navbar-absolute .navbar-brand {
     font-size: 2rem;
+}
+
+.navbar.navbar-absolute {
+    position: absolute;
 }
 
 .container-fluid.diagonal {
