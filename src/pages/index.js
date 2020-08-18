@@ -21,9 +21,9 @@ class IndexPage extends Component {
     window.onscroll =()=>{
       const newScrollHeight = Math.ceil(window.scrollY / 50) * 50;
       if (this.state.currentScrollHeight !== newScrollHeight){
-          this.setState({currentScrollHeight: newScrollHeight})
+        this.setState({currentScrollHeight: newScrollHeight});
       }
-    }
+    };
   }
 
   render() {
@@ -34,7 +34,7 @@ class IndexPage extends Component {
       opacity = 100;
     return (
       <>
-        <SEO title="Home" keywords={[`develop`, `application`, `progamming`, `kmd`, `digital`]} />
+        <SEO title="Home" keywords={['develop', 'application', 'progamming', 'kmd', 'digital']} />
         <nav className="navbar navbar-expand-lg navbar-dark navbar-absolute">
           <div className="container">
             <a className="navbar-brand" href="/">KMD Digital</a>
@@ -128,19 +128,19 @@ class IndexPage extends Component {
         </div>
         <footer className="footer">
           <div className="container">
-          <div className="row">
-            <div className="col-sm-6 d-flex">
-              <p className="text-light mb-0 justify-content-center align-self-center">Copyright &copy; {new Date().getFullYear()} KMD Digital LLC</p>
+            <div className="row">
+              <div className="col-sm-6 d-flex">
+                <p className="text-light mb-0 justify-content-center align-self-center">Copyright &copy; {new Date().getFullYear()} KMD Digital LLC</p>
+              </div>
+              <div className="col-sm-6 text-right">
+                <a href="https://github.com/kmddigital" target="_blank" rel="noopener noreferrer"><i className="text-light fab fa-2x fa-github"></i></a>
+              </div>
             </div>
-            <div className="col-sm-6 text-right">
-              <a href="https://github.com/kmddigital" target="_blank" rel="noopener noreferrer"><i className="text-light fab fa-2x fa-github"></i></a>
-            </div>
-          </div>
           </div>
         </footer>
       </>
-    )
+    );
   }
 }
 
-export default IndexPage
+export default IndexPage;
