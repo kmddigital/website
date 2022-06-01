@@ -1,0 +1,10 @@
+[[redirects]]
+from = "https://kmddigital.com/*"
+to = "https://keithcr.com"
+status = 301
+force = true
+[[redirects]]
+from = "http://kmddigital.com/*"
+to = "https://keithcr.com"
+status = 301
+force = true
